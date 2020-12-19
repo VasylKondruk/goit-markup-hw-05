@@ -118,6 +118,10 @@ img {
   position: relative;
 }
 
+.navigation-list-link.current::after {
+  opacity: 1;
+}
+
 .navigation-list-link::after {
   position: absolute;
   top: 45px;
