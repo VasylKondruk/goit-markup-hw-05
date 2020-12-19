@@ -118,18 +118,22 @@ img {
   position: relative;
 }
 
-.navigation-list-link.current::after {
+.navigation-list-link::after {
   position: absolute;
   top: 45px;
   left: 0;
   bottom: -1px;
   width: 100%;
-  /* height: 100%; */
-
   content: "";
   border-bottom: 4px solid #2196f3;
   border-radius: 2px;
-  /* opacity: 0; */
+  opacity: 0;
+}
+
+.navigation-list-link:hover::after,
+.navigation-list-link:focus::after {
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-list {
@@ -185,13 +189,12 @@ img {
 .contact-list-link:hover .phone,
 .contact-list-link:focus .phone {
   fill: var(--accent-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .envelop,
 .phone {
   margin-right: 10px;
-
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-list-link:hover,
@@ -603,6 +606,7 @@ img {
   color: var(--white);
   background-color: var(--accent-color);
   border-radius: 4px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ========== PORTFOLIO LIST ========== */
